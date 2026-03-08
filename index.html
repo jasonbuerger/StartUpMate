@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup Made | Selective Excellence 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,500&family=Inter:wght@100;200;300;400&display=swap" rel="stylesheet">
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <style>
+        :root {
+            --bg: #ffffff;
+            --text: #000000;
+            --subtle: #aaaaaa;
+            --accent-font: 'Playfair Display', serif;
+            --main-font: 'Inter', sans-serif;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: var(--main-font);
+            line-height: 1.8;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            letter-spacing: 0.03em;
+        }
+
+        .fancy { font-family: var(--accent-font); font-style: italic; }
+
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 0; width: 100%;
+            padding: 40px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(255,255,255,0.8);
+            backdrop-filter: blur(15px);
+        }
+
+        .logo { font-family: var(--accent-font); font-size: 1.2rem; font-style: italic; }
+        .nav-links { display: flex; gap: 40px; list-style: none; }
+        .nav-links a { 
+            text-decoration: none; color: var(--text); font-size: 0.6rem; 
+            letter-spacing: 3px; text-transform: uppercase; font-weight: 300;
+            opacity: 0.4; transition: opacity 0.6s;
+        }
+        .nav-links a:hover { opacity: 1; }
+
+        /* --- Sektionen Layout --- */
+        section {
+            padding: 25vh 12% 10vh;
+            min-height: 90vh;
+        }
+
+        .label {
+            font-size: 0.55rem;
+            text-transform: uppercase;
+            letter-spacing: 6px;
+            color: var(--subtle);
+            margin-bottom: 60px;
+            display: block;
+        }
+
+        .statement {
+            font-size: 1.5rem;
+            font-weight: 200;
+            max-width: 800px;
+            margin-bottom: 100px;
+            line-height: 1.4;
+            letter-spacing: -0.02em;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 40px;
+        }
+
+        .text-column {
+            grid-column: 1 / span 6;
+            font-size: 0.85rem;
+            font-weight: 300;
+            color: #444;
+        }
+
+        .text-column p { margin-bottom: 40px; }
+
+        .sidebar {
+            grid-column: 8 / span 4;
+            font-size: 0.75rem;
+            color: var(--subtle);
+            border-top: 0.5px solid #eee;
+            padding-top: 30px;
+        }
+
+        .sidebar h4 {
+            font-family: var(--accent-font);
+            font-style: italic;
+            color: var(--text);
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        /* --- Karussell --- */
+        .carousel-container {
+            width: 100vw;
+            margin-left: -12%;
+            overflow: hidden;
+            padding: 60px 0;
+            margin-top: 100px;
+            border-top: 0.5px solid #f0f0f0;
+            border-bottom: 0.5px solid #f0f0f0;
+        }
+
+        .carousel-track { display: flex; width: max-content; align-items: center; }
+        .partner-item { margin: 0 60px; opacity: 0.3; transition: 0.8s; filter: grayscale(1); }
+        .partner-item:hover { opacity: 1; filter: grayscale(0); }
+        .partner-item img { height: 35px; object-fit: contain; }
+        .logo-placeholder { font-size: 0.55rem; letter-spacing: 3px; text-transform: uppercase; border: 0.5px solid #eee; padding: 10px 20px; }
+
+        /* --- Footer --- */
+        footer {
+            padding: 100px 12% 50px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.55rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--subtle);
+            border-top: 0.5px solid #f0f0f0;
+        }
+
+        .reveal { opacity: 0; transform: translateY(30px); }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Startup <span class="fancy">Made</span></div>
+        <ul class="nav-links">
+            <li><a href="#about">Studio</a></li>
+            <li><a href="#ki">Intelligence</a></li>
+            <li><a href="#partners">Alliances</a></li>
+        </ul>
+    </nav>
+
+    <section id="hero" style="display: flex; align-items: center; min-height: 100vh;">
+        <h1 class="statement reveal" style="font-size: 2.8rem;">
+            Reduktion als <span class="fancy">Privileg</span>.<br>
+            Gründung als Kunstform.
+        </h1>
+    </section>
+
+    <section id="about">
+        <span class="label reveal">01 — Das Studio</span>
+        <h2 class="statement reveal">Wir kuratieren Visionen. Im Jahr 2026 ist Startup Made die diskrete Instanz für Gründer, die Stille dem Lärm vorziehen.</h2>
+        
+        <div class="grid">
+            <div class="text-column reveal">
+                <p>Unsere Philosophie basiert auf der Überzeugung, dass wahre Exzellenz keine Dekoration braucht. Wir strukturieren den Weg von der ersten Idee bis zur Marktreife mit einer Präzision, die im aktuellen Marktumfeld ihresgleichen sucht.</p>
+                <p>Als Kollektiv von Experten und Visionären verstehen wir die feine Linie zwischen regulatorischer Notwendigkeit und unternehmerischer Freiheit. Wir begleiten Sie nicht nur durch Prozesse – wir erschaffen das Fundament, auf dem Ihre Identität als Gründer wachsen kann.</p>
+            </div>
+            <div class="sidebar reveal">
+                <h4>Methodik</h4>
+                <p>Selektive Beratung.<br>Hingabe zum Detail.<br>Globale Vernetzung.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="ki">
+        <span class="label reveal">02 — Die Intelligenz</span>
+        <h2 class="statement reveal">Ein System, das <span class="fancy">versteht</span>, bevor es berechnet. Unsere KI ist Ihr stiller Architekt.</h2>
+        
+        <div class="grid">
+            <div class="text-column reveal">
+                <p>Die Technologie hinter Startup Made im Jahr 2026 ist weit mehr als ein Algorithmus. Sie ist eine hochspezialisierte Intelligence-Unit, trainiert auf den komplexesten Wirtschaftsdaten und rechtlichen Rahmenbedingungen der Moderne.</p>
+                <p>Wir nutzen generative Logik nicht zur bloßen Texterstellung, sondern zur Validierung Ihrer Geschäftsmodelle in Echtzeit. Jede Analyse, jeder Businessplan und jede Marktprognose durchläuft Millionen von Simulationen, um Ihnen die nötige Sicherheit für Ihre Entscheidungen zu geben.</p>
+            </div>
+            <div class="sidebar reveal">
+                <h4>S/M-01 Engine</h4>
+                <p>Echtzeit-Validierung.<br>Deep-Market Analysis.<br>Neural Legal Check.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="partners">
+        <span class="label reveal">03 — Allianzen</span>
+        <h2 class="statement reveal">Ein Netzwerk aus <span class="fancy">Kuratoren</span>.</h2>
+        <div class="text-column reveal" style="grid-column: 1 / span 8;">
+            <p>Wir kooperieren ausschließlich mit Institutionen und Partnern, die unsere Vision von minimalistischer Effizienz und höchster Qualität teilen. Gemeinsam bilden wir ein Ökosystem für den Erfolg von morgen.</p>
+        </div>
+
+        <div class="carousel-container reveal">
+            <div class="carousel-track" id="track">
+                <div class="partner-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/NordVPN_logo.svg/3840px-NordVPN_logo.svg.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                    <div class="logo-placeholder" style="display:none;">Alliance 01</div>
+                </div>
+                <div class="partner-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/OpenAI_Logo.svg/3840px-OpenAI_Logo.svg.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                    <div class="logo-placeholder" style="display:none;">Alliance 02</div>
+                </div>
+                <div class="partner-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Google_2015_logo.svg/3840px-Google_2015_logo.svg.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                    <div class="logo-placeholder" style="display:none;">Alliance 03</div>
+                </div>
+                <div class="partner-item">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Bundesagentur_f%C3%BCr_Arbeit-Logo.svg/1280px-Bundesagentur_f%C3%BCr_Arbeit-Logo.svg.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                    <div class="logo-placeholder" style="display:none;">Alliance 04</div>
+                </div>
+                <div class="partner-item">
+                    <img src="https://it-kom-glasfaser.de/wp-content/uploads/2025/04/Deutsche_Telekom-Logo.svg.png" alt="" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+                    <div class="logo-placeholder" style="display:none;">Alliance 05</div>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <footer>
+        <div>&copy; 2026 Startup Made &mdash; Selective Excellence</div>
+        <div>Berlin // International Operations</div>
+    </footer>
+
+    <script>
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Allgemene Reveal Animation
+        const reveals = document.querySelectorAll('.reveal');
+        reveals.forEach((el) => {
+            gsap.to(el, {
+                scrollTrigger: {
+                    trigger: el,
+                    start: "top 92%",
+                },
+                opacity: 1,
+                y: 0,
+                duration: 2,
+                ease: "expo.out",
+                stagger: 0.2
+            });
+        });
+
+        // Karussell Logik
+        const track = document.getElementById('track');
+        const clone = track.innerHTML;
+        track.innerHTML += clone + clone; // Verdreifachen für Endlos-Effekt
+
+        gsap.to(track, {
+            xPercent: -33.33,
+            ease: "none",
+            duration: 25,
+            repeat: -1
+        });
+    </script>
+</body>
+</html>
